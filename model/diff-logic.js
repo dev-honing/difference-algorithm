@@ -1,10 +1,12 @@
 // \model\diff-logic.js
 
 /**
- * 
- * @param {JSON, Path} inputJSONdata 
- * @param {JSON, Path} outputJSONdata 
- * @returns Object
+ * JSON 파일을 비교하여 차이를 분석하고, 결과를 반환하는 함수
+ * @param {JSON, Path} inputJSONdata - 비교 대상 JSON 파일의 경로
+ * @param {JSON, Path} outputJSONdata  - 결과를 저장할 JSON 파일의 경로
+ * @returns Object - 비교 결과 객체
+ * @throws {Error} - 입력 및 출력 경로가 유효한 JSON 파일이 아닌 경우 에러 발생
+
  */
 
 // 내보내는 함수에 대한 정의
@@ -14,7 +16,7 @@ export default function(inputJSONPath, outputJSONPath) {
     throw new Error(`매개변수 ${inputJSONPath}, ${outputJSONPath}는 json 파일이 아닙니다.`); // 
     // throw: 에러를 발생시키는 키워드
   }
-  let result = {};
+  let result = {}; // 빈 객체를 생성
   /**
    * ? Q. JSON 파일을 아래의 5, 6번에 해당하는 로직 작성 후 JSON으로 저장
    * ? Q. 저장이 완료되면 초기화된 result에 객체를 리턴

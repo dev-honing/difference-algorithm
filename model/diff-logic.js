@@ -1,3 +1,4 @@
+// \model\diff-logic.js
 
 /**
  * 
@@ -6,9 +7,12 @@
  * @returns Object
  */
 
+// 내보내는 함수에 대한 정의
 export default function(inputJSONPath, outputJSONPath) {
-  if (!inputJSONPath.endsWith('.json') || !outputJSONPath.endsWith('.json')) {
-    throw new Error(`매개변수 ${inputJSONPath}, ${outputJSONPath}는 json 파일이 아닙니다.`);
+  // 조건문 로직 작성
+  if (!inputJSONPath.endsWith('.json') || !outputJSONPath.endsWith('.json')) { // 둘 중 하나라도 .json으로 끝나지 않으면,
+    throw new Error(`매개변수 ${inputJSONPath}, ${outputJSONPath}는 json 파일이 아닙니다.`); // 
+    // throw: 에러를 발생시키는 키워드
   }
   let result = {};
   /**
